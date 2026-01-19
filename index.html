@@ -1,0 +1,135 @@
+s<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">                 
+    <title>Gestion des Évènements</title>
+</head>
+<body>
+     <header>
+    <h1>Gestion des Évènements</h1>
+   
+  </header>
+
+  <main>
+
+    <section class="card">
+      <h2>Créer un évènement</h2>
+
+      <form id="event-form">
+        <div class="form-group">
+          <label>Titre</label>
+          <input type="text" id="title" required>
+        </div>
+
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="description" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" id="date" required>
+          </div>
+
+          <div class="form-group">
+            <label>Lieu</label>
+            <input type="text" id="location" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Catégorie</label>
+            <select id="category">
+              <option value="conférence">Conférence</option>
+              <option value="sport">Sport</option>
+              <option value="atelier">Atelier</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Capacité</label>
+            <input type="number" id="capacity" min="1" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary">Créer</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Filtrer les évènements</h2>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Catégorie</label>
+          <select id="filter-category">
+            <option value="">Toutes</option>
+            <option value="conférence">Conférence</option>
+            <option value="sport">Sport</option>
+            <option value="atelier">Atelier</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" id="filter-date">
+        </div>
+      </div>
+      <div class="form-group">
+        <label><input type="checkbox" id="show-past"> Afficher terminés</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Liste des évènements</h2>
+      <div id="event-list" class="event-list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Évènements terminés</h2>
+      <div id="past-event-list" class="event-list"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Mini Application – Gestion evènement</p>
+  </footer>
+
+  <div id="event-modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close">✖</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <div id="registration-modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content">
+      <button id="registration-modal-close" class="modal-close">✖</button>
+      <h3>S'inscrire à l'événement</h3>
+      <form id="registration-form">
+        <div class="form-group">
+          <label>Nom</label>
+          <input type="text" id="reg-name" required>
+        </div>
+        <div class="form-group">
+          <label>Email institutionnel</label>
+          <input type="email" id="reg-email" required>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">S'inscrire</button>
+          <button type="button" id="registration-cancel" class="btn">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="dist/main.js"></script>
+</body>
+</html>

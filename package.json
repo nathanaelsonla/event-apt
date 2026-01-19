@@ -1,0 +1,13 @@
+{
+  "name": "even_ap",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -w -p tsconfig.json",
+    "start": "npm run build && npx http-server ./dist -c-1"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
